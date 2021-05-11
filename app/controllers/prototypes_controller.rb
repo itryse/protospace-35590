@@ -1,9 +1,9 @@
 class PrototypesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy]
   #上のアクションを実行した際にはログインページに遷移する意味。
+
   before_action :move_to_index, only: :edit
   before_action :go_to_index, only: :edit
-
 
   def index
     @prototypes = Prototype.all
